@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SnakeGame</title>
+    <link rel="stylesheet" href="snake.css" type="text/css"></link> 
+</head>
+<body style="margin: 0;" onload = "determineScreenSizing()">
+    <div id="container">
+        <div id="checkerboard">
+            <canvas id="MyCanvas" width=600 height=600>
+                <script type="text/javascript" src="snake.js"></script>
+            </canvas>
+        </div>
+        <div id = "options">
+            <button class = "buttons playagainbutton" onclick = "main()">PLAY</button>
+            <button class = "buttons highscoreButton" onclick = "difficulty()">DIFFICULTY</button>
+            <button class = "buttons tutorial" onclick = "tutorial()">TUTORIAL</button>
+        </div>
+        <div id = "death">
+            <header class = "text" id = "deathText">You Died!</header>
+            <p class = "text" id = "score">Score: 0</p>
+            <button id = continueButton class = "buttons okayButton" onclick = "cont()">Continue</button>   
+        </div>
+        <div class = "text" id = "difficulty">
+            <header id = "speed">Speed</header>
+            <div class = "speedcontainer">
+                <input type = "range" min = ".25" max = "5" value = "1.5" step = ".25" class = "slider" id = "speedSlider"></input>
+            </div>
+            <header id = "size">Number Of Tiles</header>
+            <div class = "speedcontainer">
+                <input type = "range" min = "4" max = "20" step = "1" value = "8" class = "slider" id = "sizeSlider"></input>
+            </div>
+            <button id = "difficultyContinue" class = "buttons" onclick = "exitOptions()">Save</button>
+        </div>
+        <div id = "tutorial">
+            <h1 class = "tutorial_header">HELP
+            </h1>
+            <p1 class = "tutorial_paragraph">
+                <u>PLAY<br /></u>This button starts the game.<br />
+            </p1>
+            <p2 class="tutorial_paragraph">
+                <u>DIFFICULTY<br /></u>
+                SPEED: This slider is used to change the snake's speed.<br />
+                SIZE: This slider is used to change the size of snake's<br />
+                body. It also changes the dimensions of the arena.
+            </p2>
+            <p3 class="tutorial_paragraph">
+                <u>NAVIGATION</u><br />
+                To change the direction of the snake, simply press<br />
+                the arrow key pointing in the desired direction.
+            </p3>
+            <button onclick = "tutorial()" id = menu_exit_button class="buttons">BACK</button>
+        </div>
+    </div>
+</body>
+</html>
